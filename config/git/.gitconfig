@@ -1,0 +1,11 @@
+[user]
+	name = Adrien-H
+	email = adrien.h@tuta.io
+	username = Adrien-H
+[alias]
+	ll = log --graph --date=local --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %C(white bold)%s%Creset %C(white dim)(par%Creset %C(green bold)%an%Creset %C(white dim)%ar)%Creset'
+	l = !git ll --all
+
+[init]
+	defaultBranch = master
+
