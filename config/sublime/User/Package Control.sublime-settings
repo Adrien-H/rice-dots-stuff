@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ColorPick",
+		"Elixir",
+		"Emmet",
+		"Gleam",
+		"i3 wm",
+		"Julia",
+		"LSP-elixir",
+		"LSP-julia",
+		"NASM x86 Assembly",
+		"Package Control",
+		"RainbowBrackets",
+		"Sass",
+		"Theme - Cyanide",
+		"Zig Language",
+	],
+}
