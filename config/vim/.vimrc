@@ -63,6 +63,12 @@ set noexpandtab
 set autoindent
 set smartindent
 
+" C
+autocmd FileType c,h setlocal shiftwidth=4 tabstop=4 noexpandtab
+" C++
+autocmd FileType cpp,hpp setlocal shiftwidth=4 tabstop=4 noexpandtab
+" PHP
+autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
 " Elixir
 autocmd FileType elixir,eelixir,heex setlocal shiftwidth=2 softtabstop=2 expandtab
 " Go
