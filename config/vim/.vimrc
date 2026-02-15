@@ -1,3 +1,5 @@
+let mapleader = " "
+
 " ------
 " PLUGINS
 " ------
@@ -37,15 +39,7 @@ set number
 set relativenumber
 set ruler
 set colorcolumn=0
-
-set tabstop=4
-set softtabstop=4
-set expandtab
-set autoindent
-set smartindent
-
 set cursorline
-
 set showcmd
 
 " set keymap="/home/adrien/.vim/keymap/french-azerty.vim"
@@ -57,6 +51,22 @@ filetype indent on
 " Cursor shapes, block and blinking bar
 let &t_EI = "\033[2 q"
 let &t_SI = "\e[5 q"
+
+
+" ------
+" INDENT
+" ------
+
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+set autoindent
+set smartindent
+
+" Elixir
+autocmd FileType elixir,eelixir,heex setlocal shiftwidth=2 softtabstop=2 expandtab
+" Go
+autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 " ------
 " LANGUAGE SERVERS
@@ -98,7 +108,7 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" Autocomplete (close window after insert)
+" Autocomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
@@ -106,12 +116,14 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0
 set completeopt=menuone,noinsert,noselect,preview
-"let g:lsp_diagnostics_enabled = 1
-"let g:lsp_signs_enabled = 1
-"let g:lsp_diagnostics_echo_cursor = 1
 
-"let g:lsp_diagnostics_float_cursor = 1
-"let g:lsp_diagnostics_float_delay = 500
+" Diagnostics
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_float_cursor = 1
+let g:lsp_diagnostics_float_delay = 500
 
-"highlight LspErrorText cterm=undercurl gui=undercurl guisp=Red
-"highlight LspWarningText cterm=undercurl gui=undercurl guisp=Yellow
+highlight LspErrorText cterm=undercurl gui=undercurl guisp=Red
+highlight LspWarningText cterm=undercurl gui=undercurl guisp=Yellow
+
