@@ -48,12 +48,14 @@ set cursorline
 set showcmd
 
 " set keymap="/home/adrien/.vim/keymap/french-azerty.vim"
-
 syntax on
 colorscheme elflord
 filetype plugin on
 filetype indent on
 
+" Cursor shapes, block and blinking bar
+let &t_EI = "\033[2 q"
+let &t_SI = "\e[5 q"
 
 " ------
 " LANGUAGE SERVERS
