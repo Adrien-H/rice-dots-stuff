@@ -34,6 +34,7 @@ call plug#end()
 set nocompatible
 
 set number
+set relativenumber
 set ruler
 set colorcolumn=0
 
