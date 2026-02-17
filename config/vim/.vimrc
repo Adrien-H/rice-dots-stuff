@@ -17,6 +17,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " Plugs
 call plug#begin()
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-endwise'
+
+Plug 'terryma/vim-multiple-cursors'
+
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -26,6 +31,8 @@ Plug 'elixir-editors/vim-elixir'
 
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'lervag/vimtex'
 call plug#end()
 
 
@@ -132,4 +139,11 @@ let g:lsp_diagnostics_float_delay = 500
 
 highlight LspErrorText cterm=undercurl gui=undercurl guisp=Red
 highlight LspWarningText cterm=undercurl gui=undercurl guisp=Yellow
+
+" ------
+" LaTeX
+" ------
+autocmd FileType tex setlocal wrap linebreak breakindent
+let g:vimtex_fold_enabled=0
+let g:vimtex_view_method='zathura'
 
