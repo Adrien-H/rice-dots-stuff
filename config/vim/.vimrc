@@ -20,6 +20,7 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary' " ex: gc4j
+Plug 'tpope/vim-sleuth'
 
 Plug 'terryma/vim-multiple-cursors'
 
