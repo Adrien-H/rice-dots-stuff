@@ -27,6 +27,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-lsp-settings'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -34,6 +35,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
 
 Plug 'vim-airline/vim-airline'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'lervag/vimtex'
@@ -55,7 +57,9 @@ set showcmd
 
 " set keymap="/home/adrien/.vim/keymap/french-azerty.vim"
 syntax on
-colorscheme elflord
+colorscheme PaperColor
+set background=dark
+
 filetype plugin on
 filetype indent on
 
@@ -98,6 +102,7 @@ nnoremap <leader>fh :History<CR>
 
 " Terminal
 nnoremap <leader>t :term<CR>
+
 
 " ------
 " LANGUAGE SERVERS
