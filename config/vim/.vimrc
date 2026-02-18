@@ -27,6 +27,9 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-lsp-settings'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 Plug 'elixir-editors/vim-elixir'
 
 Plug 'vim-airline/vim-airline'
@@ -80,6 +83,16 @@ autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType elixir,eelixir,heex setlocal shiftwidth=2 softtabstop=2 expandtab
 " Go
 autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
+
+" ------
+" FZF
+" ------
+
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fg :Rg<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fh :History<CR>
+
 
 " ------
 " LANGUAGE SERVERS
