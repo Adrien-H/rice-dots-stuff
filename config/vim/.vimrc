@@ -19,6 +19,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary' " ex: gc4j
 
 Plug 'terryma/vim-multiple-cursors'
 
@@ -84,15 +85,19 @@ autocmd FileType elixir,eelixir,heex setlocal shiftwidth=2 softtabstop=2 expandt
 " Go
 autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
 
+
 " ------
-" FZF
+" LEADER MAPPINGS
 " ------
 
+" FZF
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fh :History<CR>
 
+" Terminal
+nnoremap <leader>t :term<CR>
 
 " ------
 " LANGUAGE SERVERS
