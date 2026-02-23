@@ -176,7 +176,7 @@ highlight LspWarningText cterm=undercurl gui=undercurl guisp=Yellow
 augroup LaTeX
     autocmd!
 
-    autocmd FileType tex setlocal wrap linebreak breakindent conceallevel=2 concealcursor=n
+    autocmd FileType tex setlocal wrap linebreak breakindent conceallevel=2 concealcursor=n nocursorline
     autocmd Syntax tex syntax match Nbsp /\%u00a0/ containedin=ALL conceal cchar=⎵
     autocmd Syntax tex syntax match ThinSp /\%u202f/ containedin=ALL conceal cchar=·
 
