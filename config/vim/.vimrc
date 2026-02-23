@@ -22,6 +22,10 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary' " ex: gc4j
 Plug 'tpope/vim-sleuth'
 
+Plug 'junegunn/goyo.vim'
+
+Plug 'terryma/vim-multiple-cursors'
+
 Plug 'terryma/vim-multiple-cursors'
 
 Plug 'prabirshrestha/vim-lsp'
@@ -68,7 +72,6 @@ filetype indent on
 let &t_EI = "\033[2 q"
 let &t_SI = "\e[5 q"
 
-
 " ------
 " INDENT
 " ------
@@ -104,6 +107,8 @@ nnoremap <leader>fh :History<CR>
 " Terminal
 nnoremap <leader>t :term<CR>
 
+" Focus
+nnoremap <Leader>g :Goyo<CR>
 
 " ------
 " LANGUAGE SERVERS
@@ -167,7 +172,15 @@ highlight LspWarningText cterm=undercurl gui=undercurl guisp=Yellow
 " ------
 " LaTeX
 " ------
-autocmd FileType tex setlocal wrap linebreak breakindent
-let g:vimtex_fold_enabled=0
-let g:vimtex_view_method='zathura'
+
+augroup LaTeX
+    autocmd!
+
+    autocmd FileType tex setlocal wrap linebreak breakindent conceallevel=2 concealcursor=n
+    autocmd Syntax tex syntax match Nbsp /\%u00a0/ containedin=ALL conceal cchar=⎵
+    autocmd Syntax tex syntax match ThinSp /\%u202f/ containedin=ALL conceal cchar=·
+
+    let g:vimtex_fold_enabled=0
+    let g:vimtex_view_method='zathura'
+augroup END
 
