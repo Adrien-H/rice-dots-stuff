@@ -40,10 +40,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
 
 Plug 'vim-airline/vim-airline'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'lervag/vimtex'
+
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 
@@ -62,8 +63,12 @@ set showcmd
 
 " set keymap="/home/adrien/.vim/keymap/french-azerty.vim"
 syntax on
+set termguicolors
 colorscheme PaperColor
 set background=dark
+if !has('gui_running')
+    set t_Co=256
+endif
 
 filetype plugin on
 filetype indent on
@@ -90,8 +95,6 @@ autocmd FileType cpp,hpp setlocal shiftwidth=4 tabstop=4 noexpandtab
 autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
 " Elixir
 autocmd FileType elixir,eelixir,heex setlocal shiftwidth=2 softtabstop=2 expandtab
-" Go
-autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 
 " ------
@@ -169,6 +172,7 @@ let g:lsp_diagnostics_float_delay = 500
 highlight LspErrorText cterm=undercurl gui=undercurl guisp=Red
 highlight LspWarningText cterm=undercurl gui=undercurl guisp=Yellow
 
+
 " ------
 " LaTeX
 " ------
@@ -182,5 +186,16 @@ augroup LaTeX
 
     let g:vimtex_fold_enabled=0
     let g:vimtex_view_method='zathura'
+augroup END
+
+
+" ------
+" Go
+" ------
+
+augroup Go
+    autocmd!
+
+    autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
 augroup END
 
