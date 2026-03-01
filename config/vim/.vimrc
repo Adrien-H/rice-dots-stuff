@@ -43,6 +43,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'lervag/vimtex'
+Plug 'kblin/vim-fountain'
 
 Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
