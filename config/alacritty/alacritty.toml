@@ -1,0 +1,13 @@
+[window]
+# Remove title bar and system borders
+decorations = "none"
+# Full screen on start
+startup_mode = "Maximized"
+# Padding for writing focus
+padding = { x = 180, y = 100 }
+dynamic_padding = true
+
+[font]
+normal = { family = "Libertinus Mono", style = "Regular" }
+size = 15.0
+
