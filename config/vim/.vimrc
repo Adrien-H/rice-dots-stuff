@@ -191,6 +191,19 @@ augroup END
 
 
 " ------
+" Fountain
+" ------
+
+augroup Fountain
+    autocmd!
+
+    autocmd FileType fountain setlocal wrap linebreak breakindent conceallevel=2 concealcursor=n nocursorline
+    autocmd Syntax fountain syntax match Nbsp /\%u00a0/ containedin=ALL conceal cchar=⎵
+    autocmd Syntax fountain syntax match ThinSp /\%u202f/ containedin=ALL conceal cchar=·
+augroup END
+
+
+" ------
 " Go
 " ------
 
