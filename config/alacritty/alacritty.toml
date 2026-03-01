@@ -8,6 +8,6 @@ padding = { x = 180, y = 100 }
 dynamic_padding = true
 
 [font]
-normal = { family = "Libertinus Mono", style = "Regular" }
+normal = { family = "Adwaita Mono", style = "Regular" }
 size = 15.0
 
