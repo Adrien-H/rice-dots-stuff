@@ -179,27 +179,25 @@ highlight LspWarningText cterm=undercurl gui=undercurl guisp=Yellow
 " ------
 
 augroup LaTeX
-    autocmd!
-
-    autocmd FileType tex setlocal wrap linebreak breakindent conceallevel=2 concealcursor=n nocursorline
-    autocmd Syntax tex syntax match Nbsp /\%u00a0/ containedin=ALL conceal cchar=⎵
-    autocmd Syntax tex syntax match ThinSp /\%u202f/ containedin=ALL conceal cchar=·
-
     let g:vimtex_fold_enabled=0
     let g:vimtex_view_method='zathura'
 augroup END
 
 
 " ------
-" Fountain
+" Writing
 " ------
 
-augroup Fountain
+augroup Writing
     autocmd!
 
-    autocmd FileType fountain setlocal wrap linebreak breakindent conceallevel=2 concealcursor=n nocursorline
-    autocmd Syntax fountain syntax match Nbsp /\%u00a0/ containedin=ALL conceal cchar=⎵
-    autocmd Syntax fountain syntax match ThinSp /\%u202f/ containedin=ALL conceal cchar=·
+    autocmd FileType tex,fountain nnoremap <buffer> <expr> j v:count ? 'j' : 'gj'
+    autocmd FileType tex,fountain nnoremap <buffer> <expr> k v:count ? 'k' : 'gk'
+    autocmd FileType tex,fountain vnoremap <buffer> <expr> j v:count ? 'j' : 'gj'
+    autocmd FileType tex,fountain vnoremap <buffer> <expr> k v:count ? 'k' : 'gk'
+    autocmd FileType tex,fountain setlocal wrap linebreak breakindent conceallevel=2 concealcursor=n nocursorline
+    autocmd Syntax tex,fountain syntax match Nbsp /\%u00a0/ containedin=ALL conceal cchar=⎵
+    autocmd Syntax tex,fountain syntax match ThinSp /\%u202f/ containedin=ALL conceal cchar=·
 augroup END
 
 
